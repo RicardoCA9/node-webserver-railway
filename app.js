@@ -2,7 +2,7 @@ const express = require('express')
 const hbs = require('hbs');
 require('dotenv').config();
 const app = express()
-const port = process.env.PORT||8081;
+const port = process.env.PORT;
 
 //handlebar:
 app.set('view engine', 'hbs'); // para usar el handlebars para express
@@ -26,6 +26,12 @@ app.get('/elements', (req, res) => {
 
   app.get('/generic', (req, res) => {
     res.render('generic', {
+      nombre: 'Armando David',
+      titulo: 'Curso de Node'
+    })
+  });
+  app.get('/salidas', (req, res) => {
+    res.render('salidas', {
       nombre: 'Armando David',
       titulo: 'Curso de Node'
     })
